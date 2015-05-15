@@ -12,10 +12,13 @@ github_username:  digongames
 # Build settings
 markdown: kramdown
 
+kramdown:
+  input: GFM
+
 defaults:
   -
     scope:
       path: ""
       type: "posts"
     values:
-      layout: "post"
+      layout: post
