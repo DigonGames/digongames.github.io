@@ -16,7 +16,7 @@ There were a few problems we had with Jest:
 
 * Tests ran very slow, especially when fiddling with the virtual DOM and rendering React components. With only a few dozen tests, which you'd expect to take a few hundred milliseconds to run, it was already taking 5+ seconds to run our tests.
 
-* We came across bugs in Jest, which in some cases we couldn't get around (in particular: https://github.com/facebook/jest/issues/211), and didn't see much progress in fixing. The project even seemed to be stale on github for a while, but it's picking up now.
+* We came across bugs in Jest, which in some cases we couldn't get around (in particular: [https://github.com/facebook/jest/issues/211](https://github.com/facebook/jest/issues/211)), and didn't see much progress in fixing. The project even seemed to be stale on github for a while, but it's picking up now.
 
 It is possible we jumped on early and these problems are related to the project being in it's early stages.
 
