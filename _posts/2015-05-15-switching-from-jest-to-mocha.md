@@ -1,12 +1,13 @@
 ---
 title:  "Making the switch from Jest to Mocha"
 date:   2015-05-15 15:55:00
+author: hrparty
 ---
 We're a React shop at Digon Games. Our client is written in React, using the Flux design pattern. You might even say we're Facebook fanboys when it comes to front-end technologies. So, when it came time to pick a test framework for our client, we turned straight to [Jest](https://facebook.github.io/jest/).
 
 It didn't go very well. We struggled with Jest for a few months, and after yet another rage episode one afternoon, we decided enough was enough. We needed a better solution.
 
-## What's the problem?
+### What's the problem?
 
 There were a few problems we had with Jest:
 
@@ -20,15 +21,15 @@ There were a few problems we had with Jest:
 
 It is possible we jumped on early and these problems are related to the project being in it's early stages.
 
-## Picking an alternative
+### Picking an alternative
 
 In choosing an alternative, we wanted to be able to run the tests the same way we had been doing, in the shell. We needed a test framework, a test runner and an environment for our tests to run in. We looked at a few solutions for framework and runners, such as [Jasmine](http://jasmine.github.io/), [QUnit](http://qunitjs.com/) and [PhantomJS](http://phantomjs.org). In the end settled on [Mocha](http://mochajs.org/) + [jsdom](https://github.com/tmpvar/jsdom). This was the most obvious solution for us, as we're using Mocha to test our backend. So we know it well. We decided on jsdom for the environment because it seemed the easiest solution to set up. Even though jsdom is limited, and obviously not a real browser, it makes it easy to run our tests in the shell with DOM support. In the future we might look at solutions to run our tests in actual browsers for CI loops. On top of this we throw in [sinon](http://sinonjs.org/) for spys/stubs and [should](http://shouldjs.github.io) for assertions.
 
-## The setup
+### The setup
 
 When creating our setup these two resources were of much help: [Asbjørn Enge's Testing React Components](http://www.asbjornenge.com/wwc/testing_react_components.html) and [Hammer Lab's Testing React Web Apps with Mocha](http://www.hammerlab.org/2015/02/14/testing-react-web-apps-with-mocha/). Many thanks to the people behind those articles.
 
-### Installation and setup
+#### Installation and setup
 
 We need to start by installing our dependencies and setting up our environment. We're using JSX in our projects so we'll need a JSX transpiler. We opted for [Babel](http://babeljs.io/), we'll get free ES6 support thrown in as well.
 
@@ -47,7 +48,7 @@ test:
 
 Now we can run our tests with `make test` in the shell. Great.
 
-### Providing DOM
+#### Providing DOM
 
 In order for us to test React components, we needed a DOM to mount them to. We created a file in the root of the test folder, call it `dom.js`:
 
@@ -81,7 +82,7 @@ require('./dom');
 
 What we've done now is provide DOM to our tests, now we always have access to a global object called `document` and another one called `window`.
 
-### Test isolation
+#### Test isolation
 
 One of the things Jest does transparently for you is provide test isolation, so that one test doesn't pollute another test. This mostly means two things: Stubbing/mocking dependencies before the test, and cleaning up after the test. This is something we have to solve manually in our setup.
 
@@ -89,7 +90,7 @@ For stubbing out dependencies, which Jest does by auto-mocking requires, we chos
 
 We also needed to solve the issue of the DOM being global, so we need to clean it up after each test.
 
-#### Testing React components in isolation
+##### Testing React components in isolation
 
 React provides test helpers called TestUtils. We started out using `TestUtils.renderIntoDocument` to mount our components, but quickly found that we wanted to be able to have a handle on the mounted components. So we wrote our own helper for this that returns the mounted node. In our `utils` helper file:
 
@@ -139,6 +140,6 @@ afterEach(function() {
 
 Thus, we get automatic cleanup of tests after each test.
 
-## Results
+### Results
 
 We've been using the setup for a few months now and we're very happy with switch. Writing tests takes much less time even though we have to manually stub stuff. And  they run with many fewer surprises and cryptic errors. Also they run in a fraction of the time - what took 5 seconds for only 30 tests before, now takes 4 seconds with 240 tests.
