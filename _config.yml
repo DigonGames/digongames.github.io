@@ -12,6 +12,9 @@ github_username:  digongames
 # Build settings
 markdown: kramdown
 
+# Prettier URLs for the post
+permalink: :title
+
 defaults:
   -
     scope:
