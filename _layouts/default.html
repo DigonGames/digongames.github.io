@@ -2,15 +2,13 @@
 <html>
 {% include head.html %}
 <body>
-  {% include header.html %}
+  <div class="wrapper">
+    {% include header.html %}
 
-  <div class="page-content">
-    <div class="wrapper">
-      {{ content }}
-    </div>
+    {{ content }}
+
+    {% include footer.html %}
   </div>
-
-  {% include footer.html %}
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
