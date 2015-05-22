@@ -5,13 +5,11 @@ layout: default
 
   <header>
     <h2>{{ page.title }}</h2>
-    <p>{% if page.author %}<a href="https://twitter.com/{{ page.author }}">@{{ page.author }}</a>{% endif %} - {{ page.date | date: "%b %-d, %Y" }}</p>
+    <p>{% if page.author %}<a href="https://twitter.com/{{ page.author }}">@{{ page.author }}</a> - {% endif %}{{ page.date | date: "%b %-d, %Y" }}</p>
   </header>
 
   <article>
     {{ content }}
-
-    {% if page.meta %}{{ page.meta }}{% endif %}
   </article>
 
 </section>

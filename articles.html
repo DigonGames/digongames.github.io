@@ -4,12 +4,12 @@ title: Index
 permalink: /all-articles/
 ---
 
-<section class="articles">
+<section class="all-articles">
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
         <h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}/">{{ post.title }}</a></h2>
-        <p>{% if post.author %}<a href="https://twitter.com/{{ post.author }}">@{{ post.author }}</a>{% endif %} - {{ post.date | date: "%b %-d, %Y" }}</p>
+        <p>{% if post.author %}<a href="https://twitter.com/{{ post.author }}">@{{ post.author }}</a> - {% endif %}{{ post.date | date: "%b %-d, %Y" }}</p>
       </li>
     {% endfor %}
   </ul>
