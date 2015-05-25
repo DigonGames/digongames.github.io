@@ -2,13 +2,20 @@
 layout: default
 ---
 
-<section class="home">
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}/">{{ post.title }}</a></h2>
-        <p>{% if post.author %}<a href="https://twitter.com/{{ post.author }}">@{{ post.author }}</a>{% endif %} - {{ post.date | date: "%b %-d, %Y" }}</p>
-      </li>
-    {% endfor %}
-  </ul>
+<section class="home post">
+  {% for post in site.posts limit:1 %}
+    <header>
+      <h2><a href="{{ post.url | prepend: site.baseurl }}/">{{ post.title }}</a></h2>
+      <p>{% if post.author %}<a href="https://twitter.com/{{ post.author }}">@{{ post.author }}</a>{% endif %} - {{ post.date | date: "%b %-d, %Y" }}</p>
+    </header>
+
+    <article>
+      {{ post.content }}
+    </article>
+  {% endfor %}
 </section>
+
+{% for post in site.posts limit:1 offset:1 %}
+  <p class="next-post-link"><a href="{{ post.url | prepend: site.baseurl }}/">Next post</a></p>
+{% else %}
+{% endfor %}

@@ -39,13 +39,8 @@
 
       a {
         display: inline-block;
-        color: $grey-color;
         padding: ($spacing-unit / 2) $spacing-unit;
-
-        &:hover {
-          color: $brand-color;
-          text-decoration: none;
-        }
+        @extend .inverted-link;
       }
     }
   }
@@ -61,6 +56,10 @@
       font-size: 48px;
       line-height: 1.35416666666667;
       margin: 0;
+
+      a {
+        @extend .inverted-link;
+      }
     }
 
     p {
@@ -77,6 +76,17 @@
     p {
       margin-bottom: 1em;
     }
+  }
+}
+
+
+.next-post-link {
+  font-weight: 700;
+  margin: 0 ($spacing-unit * 2.5);
+  text-align: right;
+
+  a {
+    @extend .inverted-link;
   }
 }
 
@@ -99,12 +109,7 @@
     margin-bottom: 0;
 
     a {
-      color: $grey-color;
-
-      &:hover {
-        color: $brand-color;
-        text-decoration: none;
-      }
+      @extend .inverted-link;
     }
   }
 
