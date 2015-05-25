@@ -21,10 +21,7 @@ $grey-color-light:      #BFBFBF;
 $grey-color-dark:       #BDC3C7;
 $grey-color-semi-dark:  #838C94;
 
-$mobile:      200px;
-$on-palm:     600px;
-$on-laptop:   800px;
-
+$mobile:      768px;
 
 // Using media queries with like this:
 // @include media-query($palm) {
@@ -38,7 +35,6 @@ $on-laptop:   800px;
     @content;
   }
 }
-
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "base", "layout";
