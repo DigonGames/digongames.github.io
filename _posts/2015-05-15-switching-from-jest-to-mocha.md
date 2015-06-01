@@ -3,7 +3,7 @@ title:  "Making the switch from Jest to Mocha"
 date:   2015-05-15 15:55:00
 author: hrparty
 ---
-We're a React shop at Digon Games. Our client is written in React, using the Flux design pattern. You might even say we're Facebook fanboys when it comes to front-end technologies. So, when it came time to pick a test framework for our client, we turned straight to [Jest](https://facebook.github.io/jest/).
+We're a React shop at Digon Games. Our client is written in React, using the Flux design pattern. So, when it came time to pick a test framework for our client, we turned straight to [Jest](https://facebook.github.io/jest/).
 
 It didn't go very well. We struggled with Jest for a few months, and after yet another rage episode one afternoon, we decided enough was enough. We needed a better solution.
 
@@ -50,7 +50,7 @@ Now we can run our tests with `make test` in the shell. Great.
 
 #### Providing DOM
 
-In order for us to test React components, we needed a DOM to mount them to. We created a file in the root of the test folder, call it `dom.js`:
+In order for us to test React components, we needed a DOM to mount them to. We created a file in the root of the test folder, `dom.js`:
 
 ```javascript
 // make sure to always require this BEFORE requiring react
