@@ -2,7 +2,6 @@
 layout: default
 ---
 <section class="post">
-
   <header>
     <h2>{{ page.title }}</h2>
     <p>{% if page.author %}<a href="https://twitter.com/{{ page.author }}">@{{ page.author }}</a> - {% endif %}{{ page.date | date: "%b %-d, %Y" }}</p>
@@ -11,5 +10,8 @@ layout: default
   <article>
     {{ content }}
   </article>
-
 </section>
+
+{% if page.previous.url %}
+  <p class="nextpost"><a href="{{page.previous.url}}/" title="{{page.previous.title}}">Next post</a></li>
+{% endif %}
