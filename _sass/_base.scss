@@ -13,13 +13,17 @@ dl, dd, ol, ul, figure {
  */
 body {
   font-family: $base-font-family;
-  font-size: $base-font-size;
+  font-size: $mobile-base-font-size;
   line-height: $base-line-height;
   font-weight: 400;
   color: $text-color;
   background: $background-color;
   -webkit-text-size-adjust: 100%;
   border-top: 10px solid $brand-color;
+
+  @include mq-tablet {
+    font-size: $base-font-size;
+  }
 }
 
 /**
@@ -65,7 +69,11 @@ figcaption {
  * Lists
  */
 ul, ol {
-  margin-left: $spacing-unit;
+  margin-left: $mobile-spacing-unit;
+
+  @include mq-tablet {
+    margin-left: $spacing-unit;
+  }
 }
 
 li {
@@ -135,12 +143,14 @@ blockquote {
 
 
 .wrapper {
-  width: 100%;
   max-width: 700px + $spacing-unit * 2;
   margin: 0 auto;
-  padding: 0 $spacing-unit;
-}
+  padding: 0 $mobile-spacing-unit;
 
+  @include mq-tablet {
+    padding: 0 $spacing-unit;
+  }
+}
 
 %clearfix {
   &:after {
