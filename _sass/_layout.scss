@@ -133,10 +133,14 @@
 }
 
 
-.next-post-link {
+.nextpost {
+  text-align: center;
   font-weight: 700;
-  margin: 0 ($spacing-unit * 2.5);
-  text-align: right;
+  margin-top: $spacing-unit * 4.5;
+
+  @include mq-tablet {
+    margin: $spacing-unit * 4.5 ($spacing-unit * 2.5) 0;
+  }
 
   a {
     @extend .inverted-link;
