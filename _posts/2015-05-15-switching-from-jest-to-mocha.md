@@ -1,5 +1,6 @@
 ---
 title:  "Making the switch from Jest to Mocha"
+description: "The tale of our journey from Jest to Mocha as test framework for a React app"
 date:   2015-05-15 15:55:00
 author: hrparty
 ---
