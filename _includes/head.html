@@ -6,9 +6,9 @@
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 
-    <meta name="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-    <meta name="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="og:url" content="{{ page.url | replace:'/index.html','' | prepend: site.baseurl | prepend: site.url }}/">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:url" content="{{ page.url | replace:'/index.html','' | prepend: site.baseurl | prepend: site.url }}/">
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" type="text/css">
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
