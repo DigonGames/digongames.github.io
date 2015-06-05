@@ -12,6 +12,9 @@ github_username:  digongames
 # Build settings
 markdown: kramdown
 
+kramdown:
+  input: GFM
+
 # Prettier URLs for the post
 permalink: :title
 
@@ -21,4 +24,4 @@ defaults:
       path: ""
       type: "posts"
     values:
-      layout: "post"
+      layout: post

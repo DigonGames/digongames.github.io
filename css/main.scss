@@ -3,28 +3,25 @@
 ---
 @charset "utf-8";
 
-
-
 // Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
+$base-font-family: 'Open Sans', sans-serif;
+$base-font-size:   18px;
 $small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+$base-line-height: 2.1;
 
-$spacing-unit:     30px;
+$spacing-unit:     20px;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$text-color:       #333;
+$background-color: #fff;
+$brand-color:      #FF4D4D;
+$line-color:       #ECF0F1;
 
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+$grey-color:            #7F8C8D;
+$grey-color-light:      #BFBFBF;
+$grey-color-dark:       #BDC3C7;
+$grey-color-semi-dark:  #838C94;
 
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
+$mobile:      768px;
 
 // Using media queries with like this:
 // @include media-query($palm) {
@@ -34,16 +31,10 @@ $on-laptop:        800px;
 //     }
 // }
 @mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+  @media screen and (max-width: $device) {
+    @content;
+  }
 }
 
-
-
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting"
-;
+@import "base", "layout";
