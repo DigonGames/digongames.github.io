@@ -142,4 +142,4 @@ Thus, we get automatic cleanup of tests after each test.
 
 ### Results
 
-We've been using the setup for a few months now and we're very happy with switch. Writing tests takes much less time even though we have to manually stub stuff. And  they run with many fewer surprises and cryptic errors. Also they run in a fraction of the time - what took 5 seconds for only 30 tests before, now takes 4 seconds with 240 tests.
+We've been using the setup for a few months now and we're very happy with the switch. Writing tests takes much less time even though we have to manually stub stuff. And  they run with many fewer surprises and cryptic errors. Also they run in a fraction of the time - what took 5 seconds for only 30 tests before, now takes 4 seconds with 240 tests.
