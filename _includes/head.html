@@ -10,6 +10,13 @@
     <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta property="og:url" content="{{ page.url | replace:'/index.html','' | prepend: site.baseurl | prepend: site.url }}/">
 
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@digongames">
+    <meta name="twitter:creator" content="@{% if page.author %}{{ page.author }}{% else %}digongames{% endif %}">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:image" content="http://blog.digongames.com/img/digon-logo.png">
+
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" type="text/css">
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/github.min.css">
