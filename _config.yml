@@ -16,7 +16,7 @@ kramdown:
   input: GFM
 
 # Prettier URLs for the post
-permalink: :title
+permalink: :title/
 
 defaults:
   -
