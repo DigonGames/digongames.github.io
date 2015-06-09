@@ -2,6 +2,7 @@
 title:  "Making the switch from Jest to Mocha"
 description: "The tale of our journey from Jest to Mocha for testing a React app"
 date:   2015-05-15 15:55:00
+image:  /img/postpics/jestmocha.jpg
 author: hrparty
 ---
 We're a React shop at Digon Games. Our client is written in React, using the Flux design pattern. So, when it came time to pick a test framework for our client, we turned straight to [Jest](https://facebook.github.io/jest/).

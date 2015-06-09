@@ -6,12 +6,14 @@
     {% capture title %}{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}{% endcapture %}
     {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
     {% capture url %}{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+    {% capture image %}{% if page.image %}{{ page.image | prepend: site.baseurl | prepend: site.url }}{% else %}http://blog.digongames.com/img/socialshare.png{% endif %}{% endcapture %}
 
     <title>{{ title }}</title>
     <meta name="description" content="{{ description }}">
 
     <meta property="og:title" content="{{ title }}">
     <meta property="og:description" content="{{ description }}">
+    <meta property="og:image" content="{{ image }}">
     <meta property="og:url" content="{{ url }}">
 
     <meta name="twitter:card" content="summary">
@@ -19,7 +21,7 @@
     <meta name="twitter:creator" content="@{% if page.author %}{{ page.author }}{% else %}digongames{% endif %}">
     <meta name="twitter:title" content="{{ title }}">
     <meta name="twitter:description" content="{{ description }}">
-    <meta name="twitter:image" content="http://blog.digongames.com/img/digon-logo.png">
+    <meta name="twitter:image" content="{{ image }}">
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" type="text/css">
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
